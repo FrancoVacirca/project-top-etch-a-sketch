@@ -1,7 +1,12 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: bisque;
+}
+
 #grid-elements {
     display: flex;
     justify-content: center;
-    margin-right: 25vh;
+    margin-right: 30vh;
 }
 
 #elements-left {
@@ -34,4 +39,11 @@
     display: flex;
     flex-direction: column;
     width: 200px;
+    gap: 40px;
+}
+
+#brush-eraser-clear {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
