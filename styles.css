@@ -1,3 +1,14 @@
+#grid-elements {
+    display: flex;
+    justify-content: center;
+    margin-right: 25vh;
+}
+
+#elements-left {
+    display: flex;
+    align-items: center;
+}
+
 .grid-cell {
     width: 30px;
     height: 30px;
@@ -5,8 +16,22 @@
     border: 1px solid gray;
 }
 
+#grid {
+    align-self: center;
+}
+
 #grid-container {
     display: grid;
     grid-template-columns: repeat(16, 30px);
-    width: 480px;
+    place-items: center;
+}
+
+#title {
+    text-align: center;
+}
+
+#settings {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
 }
