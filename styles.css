@@ -1,0 +1,12 @@
+.grid-cell {
+    width: 30px;
+    height: 30px;
+    background-color: lightgray;
+    border: 1px solid gray;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(16, 30px);
+    width: 480px;
+}
