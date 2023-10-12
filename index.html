@@ -10,47 +10,51 @@
   <body>
     <div id="title">
       <h1>ETCH-A-SKETCH 🖌️</h1>
-<div id="grid-elements">
-  <div id="elements-left">
-    <div id="settings">
-      <div id="brush-eraser-clear">
-        <div id="paint-brush" class="tools">
-          <img
-            src="/images/brush.svg"
-            alt="paint-brush"
-          />
-        </div>
-        <div id="eraser" class="tools">
-          <img
-            src="/images/eraser.svg"
-            alt="eraser"
-          />
-        </div>
-        <div id="clear" class="tools">
-          <img src="/images/clear.png" alt="clear-all" />
+    </div>
+    <div id="grid-elements">
+      <div id="elements-left">
+        <div id="settings">
+          <div id="brush-eraser-clear">
+            <div id="paint-brush" class="tools">
+              <img src="/images/brush.svg" alt="paint-brush" />
+            </div>
+            <div id="eraser" class="tools">
+              <img src="/images/eraser.svg" alt="eraser" />
+            </div>
+            <div id="clear" class="tools">
+              <img src="/images/clear.png" alt="clear-all" />
+            </div>
+          </div>
+          <div id="chose-all-colors">
+            <input id="colors" type="color" />
+          </div>
+          <div id="chose-grid">
+            <input
+              type="range"
+              id="gridSizeRange"
+              min="8"
+              max="32"
+              step="8"
+              value="16"
+            />
+            <span id="gridSizeLabel">16x16</span>
+          </div>
         </div>
       </div>
-      <div id="chose-all-colors">
-        <input id="colors" type="color">
+      <div id="elements-right">
+        <div id="grid">
+          <div id="grid-container"></div>
+        </div>
       </div>
-      <div id="chose-grid">
-        <input type="range">
+    </div>
+    <footer>
+      <div id="links"></div>
+      <div id="github">
+        <a href="https://github.com/FrancoVacirca">github: FrancoVacirca</a>
       </div>
-    </div>
-  </div>
-  <div id="elements-right">
-    <div id="grid">
-      <div id="grid-container"></div>
-  </div> 
-</div>
-<footer>
-  <div id="links"></div>
-    <div id="github">
-      <a href="https://github.com/FrancoVacirca">github: FrancoVacirca</a>
-    </div>
-    <div id="TOP">
-      <a href="https://www.theodinproject.com/dashboard">The Oding Project</a>
-    </div>
-</footer>
+      <div id="TOP">
+        <a href="https://www.theodinproject.com/dashboard">The Odin Project</a>
+      </div>
+    </footer>
   </body>
 </html>
