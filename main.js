@@ -11,9 +11,9 @@ function createGrid(value) {
 
   for (let i = 0; i < numRows; i++) {
     for (let j = 0; j < numCols; j++) {
-      const cell = document.createElement("div"); //creates a new div when called
-      cell.classList.add("grid-cell"); //add the cell a style for css
-      gridContainer.appendChild(cell); //append cell to gridContainer
+      const cell = document.createElement("div"); 
+      cell.classList.add("grid-cell"); 
+      gridContainer.appendChild(cell); 
     }
   }
 
@@ -31,11 +31,10 @@ const gridSizeLabel = document.getElementById("gridSizeLabel");
 function updateGridSizeLabel() {
   const value = gridSizeRange.value;
   gridSizeLabel.textContent = value + "x" + value;
-  createGrid(value); //recreate the grid with the new size
+  createGrid(value);
 }
 
 gridSizeRange.addEventListener("input", updateGridSizeLabel);
 
-//initialize the grid with the default size
 createGrid(gridSizeRange.value);
 updateGridSizeLabel();
