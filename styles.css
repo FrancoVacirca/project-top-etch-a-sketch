@@ -14,15 +14,6 @@ body {
   align-items: center;
 }
 
-.grid-cell {
-  width: 100%;
-  height: 100%;
-  background-color: lightgray;
-  border: 1px solid gray;
-  margin: 0;
-  padding: 0;
-}
-
 #grid {
   align-self: center;
 }
