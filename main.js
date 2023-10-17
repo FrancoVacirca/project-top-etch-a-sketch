@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
               const cell = document.createElement('div');
               cell.style.border = '1px solid black';
               cell.style.backgroundColor = 'white';
-              cell.style.width = '10px';
-              cell.style.height = '10px';
+              cell.style.width = '100%';
+              cell.style.height = '100%';
 
               grid.appendChild(cell);
           }
