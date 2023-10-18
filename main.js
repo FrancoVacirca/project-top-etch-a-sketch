@@ -27,15 +27,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
         grid.appendChild(cell);
 
-        const colorPicker = document.getElementById("colors");
-        colorPicker.addEventListener("input", function () {
-          const colorPicked = colorPicker.value;
+        let mouseDown = false;
 
-          cell.addEventListener("click", function () {
-            cell.style.backgroundColor = colorPicked;
-            //TODO: give an initial value to the event listener draw function so it doesn't have to wait until the user gives him an input color to start drawing 
-          });
+        cell.addEventListener("mousedown", function () {
+          mouseDown = true;
+          cell.style.backgroundColor = "black";
         });
+
+        cell.addEventListener("mouseover", function () {
+          if (mouseDown == true) {
+            cell.style.backgroundColor = "black";
+          }
+        });
+
+        cell.addEventListener("mouseup", function () {
+          mouseDown = false;
+        });
+
+        //const colorPicker = document.getElementById("colors");
+        //colorPicker.addEventListener("input", function () {
+        //const currentColor = colorPicker.value;
+
+        // cell.addEventListener("mousedown", function () {
+        // cell.style.backgroundColor = currentColor;
+        // });
+        //});
       }
     }
   }
