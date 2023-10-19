@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let mouseDown = false;
   const colorPicker = document.getElementById("colors");
   let currentColor = "black";
+  const brush = document.getElementById("paint-brush");
+  const eraser = document.getElementById("eraser");
+  const clear = document.getElementById("clear-all");
+  let enableDraw = true;
 
   gridSizeRange.value = "16";
   createGrid();
@@ -16,6 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   colorPicker.addEventListener("input", function () {
     currentColor = colorPicker.value;
+  });
+
+  brush.addEventListener("click", function () {
+    enableDraw = true;
+  });
+
+  eraser.addEventListener("click", function () {
+    enableDraw = false;
   });
 
   function createGrid() {
@@ -35,11 +47,18 @@ document.addEventListener("DOMContentLoaded", function () {
         cell.addEventListener("mousedown", function () {
           mouseDown = true;
           cell.style.backgroundColor = currentColor;
+          if (enableDraw == false) {
+            mouseDown = true;
+            cell.style.backgroundColor = "white";
+          }
         });
 
         cell.addEventListener("mouseover", function () {
-          if (mouseDown == true) {
-            cell.style.backgroundColor = currentColor;
+          if (mouseDown == true && enableDraw == true) {
+          cell.style.backgroundColor = currentColor;
+          }else if (mouseDown == true && enableDraw == false) {
+            mouseDown = true;
+            cell.style.backgroundColor = "white";
           }
         });
 
