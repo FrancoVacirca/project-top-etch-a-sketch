@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentColor = "black";
   const brush = document.getElementById("paint-brush");
   const eraser = document.getElementById("eraser");
-  const clear = document.getElementById("clear-all");
+  const clear = document.getElementById("clear");
   let enableDraw = true;
 
   gridSizeRange.value = "16";
@@ -55,8 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         cell.addEventListener("mouseover", function () {
           if (mouseDown == true && enableDraw == true) {
-          cell.style.backgroundColor = currentColor;
-          }else if (mouseDown == true && enableDraw == false) {
+            cell.style.backgroundColor = currentColor;
+          } else if (mouseDown == true && enableDraw == false) {
             mouseDown = true;
             cell.style.backgroundColor = "white";
           }
@@ -64,6 +64,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         cell.addEventListener("mouseup", function () {
           mouseDown = false;
+        });
+
+        clear.addEventListener("click", function () {
+          cell.style.backgroundColor = "white";
         });
 
         grid.appendChild(cell);
