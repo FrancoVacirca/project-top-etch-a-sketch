@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const gridSizeRange = document.getElementById("gridSizeRange");
   const gridSizeLabel = document.getElementById("gridSizeLabel");
   let mouseDown = false;
+  const colorPicker = document.getElementById("colors");
+  let currentColor = "black";
 
   gridSizeRange.value = "16";
   createGrid();
@@ -10,6 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
   gridSizeRange.addEventListener("input", function () {
     createGrid();
     gridSizeLabel.textContent = gridSizeRange.value + "x" + gridSizeRange.value;
+  });
+
+  colorPicker.addEventListener("input", function () {
+    currentColor = colorPicker.value;
   });
 
   function createGrid() {
@@ -28,12 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         cell.addEventListener("mousedown", function () {
           mouseDown = true;
-          cell.style.backgroundColor = "black";
+          cell.style.backgroundColor = currentColor;
         });
 
         cell.addEventListener("mouseover", function () {
           if (mouseDown == true) {
-            cell.style.backgroundColor = "black";
+            cell.style.backgroundColor = currentColor;
           }
         });
 
@@ -42,15 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         grid.appendChild(cell);
-
-        //const colorPicker = document.getElementById("colors");
-        //colorPicker.addEventListener("input", function () {
-        //const currentColor = colorPicker.value;
-
-        // cell.addEventListener("mousedown", function () {
-        // cell.style.backgroundColor = currentColor;
-        // });
-        //});
       }
     }
   }
