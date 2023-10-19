@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const grid = document.getElementById("grid-container");
   const gridSizeRange = document.getElementById("gridSizeRange");
   const gridSizeLabel = document.getElementById("gridSizeLabel");
+  let mouseDown = false;
 
   gridSizeRange.value = "16";
   createGrid();
@@ -25,10 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
         cell.style.width = "100%";
         cell.style.height = "100%";
 
-        grid.appendChild(cell);
-
-        let mouseDown = false;
-
         cell.addEventListener("mousedown", function () {
           mouseDown = true;
           cell.style.backgroundColor = "black";
@@ -43,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
         cell.addEventListener("mouseup", function () {
           mouseDown = false;
         });
+
+        grid.appendChild(cell);
 
         //const colorPicker = document.getElementById("colors");
         //colorPicker.addEventListener("input", function () {
